@@ -1,0 +1,519 @@
+Stage
+=====
+
+Variables
+---------
+
+- Y = 114
+- Zv = 13
+- score = 8
+- ☁ high score = 58
+- paddle Xv = -53
+- control = 0
+
+背景
+--
+
+- table
+- room (blank)
+- room colored
+- shadow
+- window
+- generate 3D
+- pong
+- pong2
+- menue
+
+声音
+--
+
+- recording3
+- recording2
+- recording4
+- recording5
+- recording1
+- sound.mp3
+- BG sound
+- recording6
+- clapping
+
+脚本
+--
+
+当 @ 被点击
+隐藏变量 [☁ high score v]
+隐藏变量 [score v]
+将 [score v] 设定为 [0]
+将背景切换为 [menue v]
+重复执行
+    播放声音 [BG sound v] 直到播放完毕
+end
+
+当背景切换到 [menue v]
+显示变量 [score v]
+显示变量 [☁ high score v]
+如果 <(score) > (☁ high score)> 那么
+    将 [☁ high score v] 设定为 (score)
+    播放声音 [clapping v]
+否则
+    播放声音 [recording3 v]
+end
+在 <<按键 [space v] 是否按下？> 或 <按键 [1 v] 是否按下？>> 之前一直等待
+如果 <按键 [space v] 是否按下？> 那么
+    将 [score v] 设定为 [0]
+    将背景切换为 [generate 3D v]
+    隐藏变量 [☁ high score v]
+    隐藏变量 [score v]
+否则
+    广播 [options v]
+end
+
+当接收到 [prep game v]
+将背景切换为 [window v]
+
+将背景切换为 [pong2 v]
+隐藏变量 [☁ high score v]
+隐藏变量 [score v]
+
+
+table
+=====
+
+造型
+--
+
+- backdrop3
+- backdrop2
+
+声音
+--
+
+- pop
+
+脚本
+--
+
+当 @ 被点击
+重复执行
+    移到 x: (0) y: (0)
+    下移 (1) 层
+end
+
+当接收到 [prep game v]
+显示
+
+当背景切换到 [menue v]
+隐藏
+
+
+paddle
+======
+
+Variables
+---------
+
+- Xv = 0.3076853648706549
+- Yv = 0.07323959307860547
+
+造型
+--
+
+- costume1
+
+声音
+--
+
+- pop
+
+脚本
+--
+
+当 @ 被点击
+
+当接收到 [prep game v]
+显示
+将 [Xv v] 设定为 [0]
+将 [Yv v] 设定为 [0]
+将角色的大小设定为 (50)
+移到 x: (0) y: (150)
+重复执行
+    如果 <([y position v] 对于 [ball X Z v]) > [0]> 那么
+        将 [Xv v] 设定为 (((x 坐标) - ([x position v] 对于 [ball X Z v])) / (-10))
+        将 [Yv v] 设定为 (((y 坐标) - (((Y) / (5)) + (110))) / (-10))
+    否则
+        将 [Xv v] 设定为 ((x 坐标) / (-20))
+        将 [Yv v] 设定为 (((y 坐标) + (-130)) / (-20))
+    end
+    将x坐标增加 (Xv)
+    将y坐标增加 (Yv)
+    面向 (((Xv) * (4)) + (90)) 方向
+    下移 (2) 层
+end
+
+当背景切换到 [menue v]
+停止 [other scripts in sprite v]
+隐藏
+
+
+ball X Z
+========
+
+Variables
+---------
+
+- Xv = -12.157812153734268
+
+造型
+--
+
+- shadow
+- center test
+
+声音
+--
+
+- meow
+
+脚本
+--
+
+当 @ 被点击
+隐藏
+
+定义 phisycs
+面向 [perspective v]
+将x坐标增加 (Xv)
+移动 (Zv) 步
+如果 <<(y 坐标) < [-180]> 或 <(y 坐标) > [100]>> 那么
+    将 [Zv v] 设定为 ((Zv) * (-1))
+    将y坐标增加 (Zv)
+    广播 [collide v]
+end
+将角色的大小设定为 ((((y 坐标) - (150)) * (-1)) / (2))
+将造型切换为 [center test v]
+如果 <碰到 [table v] ?> 那么
+    将造型切换为 [shadow v]
+否则
+    将背景切换为 [menue v]
+end
+
+定义 collide
+如果 <(y 坐标) > [0]> 那么
+    将 [Zv v] 设定为 (在 (-15) 到 (-5) 间随机选一个数)
+    如果 <(x 坐标) > [10]> 那么
+        将 [Xv v] 设定为 (在 (-2) 到 (0) 间随机选一个数)
+    否则
+        如果 <(x 坐标) < [-10]> 那么
+            将 [Xv v] 设定为 (在 (0) 到 (2) 间随机选一个数)
+        否则
+            将 [Xv v] 设定为 (在 (-1.5) 到 (1.5) 间随机选一个数)
+        end
+    end
+否则
+    将 [Zv v] 设定为 (在 (5) 到 (15) 间随机选一个数)
+    如果 <(x 坐标) > ((鼠标的x坐标) + (10))> 那么
+        将 [Xv v] 设定为 ((在 (-1.5) 到 (0) 间随机选一个数) + ((([x position v] 对于 [player v]) - (paddle Xv)) * (0.8)))
+    否则
+        如果 <(x 坐标) < ((鼠标的x坐标) - (10))> 那么
+            将 [Xv v] 设定为 ((在 (0) 到 (1.5) 间随机选一个数) + ((([x position v] 对于 [player v]) - (paddle Xv)) * (0.8)))
+        否则
+            将 [Xv v] 设定为 ((在 (-1) 到 (1) 间随机选一个数) + ((([x position v] 对于 [player v]) - (paddle Xv)) * (0.8)))
+        end
+    end
+end
+
+当接收到 [start game v]
+将 [Zv v] 设定为 [5]
+将 [Xv v] 设定为 [0]
+将造型切换为 [shadow v]
+移到 x: (0) y: (0)
+显示
+重复执行
+    phisycs
+end
+
+当背景切换到 [menue v]
+停止 [other scripts in sprite v]
+隐藏
+
+当接收到 [boing v]
+将 [Xv v] 设定为 ((Xv) * (0.8))
+
+当接收到 [collide v]
+collide
+
+
+perspective
+===========
+
+造型
+--
+
+- costume1
+
+声音
+--
+
+- pop
+
+脚本
+--
+
+当 @ 被点击
+移到 x: (0) y: (300)
+
+
+Ball y
+======
+
+Variables
+---------
+
+- Yv = 15
+
+造型
+--
+
+- ball
+
+声音
+--
+
+- recording2
+- recording4
+- recording5
+
+脚本
+--
+
+当接收到 [boing v]
+将 [Yv v] 设定为 (([abs v] (Zv)) + (在 (4) 到 (5) 间随机选一个数))
+播放声音 (在 (1) 到 (3) 间随机选一个数)
+
+当接收到 [start game v]
+显示
+将 [Y v] 设定为 [11]
+将 [Yv v] 设定为 [15]
+重复执行
+    右转 @ (在 (1) 到 (10) 间随机选一个数) 度
+    移到 [ball X Z v]
+    将y坐标增加 ((Y) * (([size v] 对于 [ball X Z v]) / (100)))
+    将角色的大小设定为 ([size v] 对于 [ball X Z v])
+    将 [Yv v] 增加 (-1)
+    将 [Y v] 增加 (Yv)
+    如果 <(Y) < [10]> 那么
+        将 [Y v] 增加 ((Yv) * (-1))
+        将 [Yv v] 设定为 ((Yv) * (-1))
+        广播 [boing v]
+    end
+end
+
+当接收到 [collide v]
+将 [Yv v] 设定为 ([abs v] (Zv))
+如果 <([y position v] 对于 [ball X Z v]) < [0]> 那么
+    如果 <(到 [player v] 的距离) > [85]> 那么
+        将背景切换为 [menue v]
+    end
+否则
+
+end
+播放声音 (在 (1) 到 (3) 间随机选一个数)
+将 [score v] 增加 (1)
+
+当 @ 被点击
+隐藏
+
+当背景切换到 [menue v]
+停止 [other scripts in sprite v]
+隐藏
+
+如果 <<碰到 [paddle v] ?> 不成立> 那么
+    将背景切换为 [menue v]
+end
+
+
+player
+======
+
+造型
+--
+
+- costume2
+
+声音
+--
+
+- pop
+
+脚本
+--
+
+当 @ 被点击
+隐藏
+
+当接收到 [prep game v]
+显示
+将角色的大小设定为 (250)
+将 [ghost v] 特效设定为 (50)
+重复执行
+    将 [paddle Xv v] 设定为 (x 坐标)
+    移到 [_mouse_ v]
+    将y坐标增加 (control)
+    面向 (((x 坐标) - (paddle Xv)) + (90)) 方向
+end
+
+当背景切换到 [menue v]
+停止 [other scripts in sprite v]
+隐藏
+
+
+stuff
+=====
+
+造型
+--
+
+- instructions
+
+声音
+--
+
+- pop
+
+脚本
+--
+
+当接收到 [prep game v]
+清除所有图形特效
+等待 (0.7) 秒
+将 [ghost v] 特效设定为 (100)
+重复执行 (20) 次
+    显示
+    将造型切换为 [instructions v]
+    移到 x: ((鼠标的x坐标) / (4)) y: ((鼠标的y坐标) / (4))
+    将 [ghost v] 特效增加 (-5)
+end
+清除所有图形特效
+重复执行直到 <按键 [space v] 是否按下？>
+    显示
+    将造型切换为 [instructions v]
+    移到 x: ((鼠标的x坐标) / (4)) y: ((鼠标的y坐标) / (4))
+end
+重复执行 (20) 次
+    显示
+    将造型切换为 [instructions v]
+    移到 x: ((鼠标的x坐标) / (4)) y: ((鼠标的y坐标) / (4))
+    将 [ghost v] 特效增加 (5)
+end
+清除所有图形特效
+隐藏
+广播 [start game v]
+
+当 @ 被点击
+隐藏
+
+
+stuff2
+======
+
+造型
+--
+
+- ping0000
+- ping0001
+- ping0002
+- ping0003
+- ping0004
+- ping0005
+- ping0006
+- ping0007
+- ping0008
+- ping0009
+- ping0010
+- ping0011
+- ping0012
+- ping0013
+- ping0014
+- ping0015
+- ping2
+- ping0017
+- ping0018
+- ping0019
+- ping0020
+- ping0021
+- ping0022
+- ping0023
+- ping0024
+- ping0025
+- ping0026
+- ping0027
+- ping0028
+- ping0029
+- ping0030
+- ping0031
+- ping0032
+- ping0033
+- ping0034
+- ping3
+- ping0035
+
+声音
+--
+
+- pop
+
+脚本
+--
+
+定义 starter
+移到 x: (0) y: (0)
+将造型切换为 [ping0000 v]
+将角色的大小设定为 (100)
+清除所有图形特效
+移至最上层
+显示
+
+定义 play
+starter
+广播 [prep game v]
+重复执行 (16) 次
+    移至最上层
+    下一个造型
+    将 [ghost v] 特效增加 (5)
+end
+重复执行 (4) 次
+    移至最上层
+    将 [ghost v] 特效增加 (5)
+end
+隐藏
+
+当 @ 被点击
+隐藏
+
+当背景切换到 [generate 3D v]
+play
+
+等待 (0.5) 秒
+
+当接收到 [options v]
+隐藏变量 [score v]
+隐藏变量 [☁ high score v]
+将造型切换为 [ping0017 v]
+将角色的大小设定为 (130)
+清除所有图形特效
+移到 x: (0) y: (0)
+显示
+重复执行 (18) 次
+    下一个造型
+    下移 (1) 层
+end
+在 <<按键 [1 v] 是否按下？> 或 <按键 [2 v] 是否按下？>> 之前一直等待
+如果 <按键 [1 v] 是否按下？> 那么
+    将 [control v] 设定为 [0]
+否则
+    将 [control v] 设定为 [80]
+end
+重复执行 (18) 次
+    将造型切换为 ((造型编号) - (1))
+end
+play

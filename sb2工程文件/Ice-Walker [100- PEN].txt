@@ -1,0 +1,927 @@
+Stage
+=====
+
+Variables
+---------
+
+- i = 13
+- pos_personnage = 37
+- etat_ecran = 4
+- Sandbox_Case = 0
+- a = 8
+- b = 2
+- code_level = 0614021000122002024003747
+- nombre_code_level = 0
+- binaire_nombre_code_level = 110
+- nouveauNombre_B = 1
+- nouveau_code_level = 10000024614001212010211
+- nombreBinaire = 0
+- niveau = 7
+
+Lists
+-----
+
+- obstacles:
+    - 41
+    - 51
+    - 91
+    - 12
+    - 82
+    - 33
+    - 64
+    - 84
+    - 25
+    - 26
+    - 86
+    - 17
+- niveaux:
+    - 0010000004000000016001186
+    - 1002002021410240404004335
+    - 1000000000004420252005197
+    - 0000300021044000202015141
+    - 0024000014042000010101186
+    - 0020201004210000042005361
+    - 0614021000122002024003747
+    - 0410040421102040404201156
+    - 0041200010011020102004353
+    - 0401140210222200121001195
+    - 0301014042422100000208233
+    - 6000040400101000020409153
+- code level:
+    - 0614021000122002024003747
+
+背景
+--
+
+- backdrop1
+
+声音
+--
+
+- pop
+
+
+Figur1
+======
+
+造型
+--
+
+- Kostüm1
+
+声音
+--
+
+- Vexento - We Are One (Original).mp3
+
+脚本
+--
+
+定义 Grille
+移到 x: (-200) y: (140)
+将画笔颜色设定为 ((0) + (0))
+将画笔粗细设定为 (5)
+落笔
+移动 (360) 步
+将y坐标增加 (-280)
+移动 (-360) 步
+将y坐标增加 (280)
+将画笔粗细设定为 (5)
+重复执行 (9) 次
+    移动 (40) 步
+    将y坐标增加 (-280)
+    将y坐标增加 (280)
+end
+移到 x: (-200) y: (140)
+重复执行 (7) 次
+    将y坐标增加 (-40)
+    移动 (360) 步
+    移动 (-360) 步
+end
+抬笔
+
+定义 fond
+移到 x: (-200) y: (135)
+将画笔颜色设定为 [-15228969 v]
+将画笔粗细设定为 (5)
+落笔
+重复执行 (72) 次
+    将y坐标增加 (-272)
+    将y坐标增加 (272)
+    移动 (5) 步
+end
+将y坐标增加 (-272)
+将y坐标增加 (272)
+抬笔
+
+定义 effacePerso
+移到 x: ((-180) + ((40) * ((第 (1) 个字符： (pos_personnage)) - (1)))) y: ((-120) + ((40) * ((第 (2) 个字符： (pos_personnage)) - (1))))
+将画笔颜色设定为 [-15228969 v]
+将画笔粗细设定为 (28)
+落笔
+抬笔
+如果 <(连接 (第 (1) 个字符： (pos_personnage)) 和 (第 (2) 个字符： (pos_personnage))) = (连接 (第 (24) 个字符： (code_level)) 和 (第 (25) 个字符： (code_level)))> 那么
+    dessineFlag ((-200) + ((40) * ((第 (1) 个字符： (pos_personnage)) - (1)))) ((-140) + ((40) * ((第 (2) 个字符： (pos_personnage)) - (1))))
+end
+
+当 @ 被点击
+隐藏列表 [code level v]
+删除第 (all) 项于 [code level v]
+将 [0000000000000000000001197] 加到 [code level v]
+将 [code_level v] 设定为 [0000000000000000000001197]
+将 [Sandbox_Case v] 设定为 [0]
+清空
+将 [etat_ecran v] 设定为 [1]
+重复执行
+    如果 <(etat_ecran) = [2]> 那么
+        如果 <鼠标键被按下？> 那么
+            如果 <<<(鼠标的x坐标) < [220]> 与 <[180] < (鼠标的x坐标)>> 与 <<(鼠标的y坐标) < [110]> 与 <[70] < (鼠标的y坐标)>>> 那么
+                couche_couleur_noir
+                将画笔颜色设定为 [-10277479 v]
+                移到 x: (180) y: (110)
+                将画笔粗细设定为 (4)
+                落笔
+                移动 (40) 步
+                将y坐标增加 (-40)
+                移动 (-40) 步
+                将y坐标增加 (40)
+                抬笔
+                将 [Sandbox_Case v] 设定为 [1]
+            end
+            如果 <<<(鼠标的x坐标) < [220]> 与 <[180] < (鼠标的x坐标)>> 与 <<(鼠标的y坐标) < [50]> 与 <[10] < (鼠标的y坐标)>>> 那么
+                couche_couleur_noir
+                将画笔颜色设定为 [-10277479 v]
+                移到 x: (180) y: (50)
+                将画笔粗细设定为 (4)
+                落笔
+                移动 (40) 步
+                将y坐标增加 (-40)
+                移动 (-40) 步
+                将y坐标增加 (40)
+                抬笔
+                将 [Sandbox_Case v] 设定为 [2]
+            end
+            如果 <<<(鼠标的x坐标) < [220]> 与 <[180] < (鼠标的x坐标)>> 与 <<(鼠标的y坐标) < [-8]> 与 <[-50] < (鼠标的y坐标)>>> 那么
+                couche_couleur_noir
+                将画笔颜色设定为 [-10277479 v]
+                移到 x: (180) y: (-10)
+                将画笔粗细设定为 (4)
+                落笔
+                移动 (40) 步
+                将y坐标增加 (-40)
+                移动 (-40) 步
+                将y坐标增加 (40)
+                抬笔
+                将 [Sandbox_Case v] 设定为 [3]
+            end
+            如果 <<<(鼠标的x坐标) < [220]> 与 <[180] < (鼠标的x坐标)>> 与 <<(鼠标的y坐标) < [-70]> 与 <[-110] < (鼠标的y坐标)>>> 那么
+                couche_couleur_noir
+                将画笔颜色设定为 [-10277479 v]
+                移到 x: (180) y: (-70)
+                将画笔粗细设定为 (4)
+                落笔
+                移动 (40) 步
+                将y坐标增加 (-40)
+                移动 (-40) 步
+                将y坐标增加 (40)
+                抬笔
+                将 [Sandbox_Case v] 设定为 [4]
+            end
+        end
+    end
+end
+
+定义 couche_couleur_noir
+移到 x: (180) y: (110)
+将画笔颜色设定为 [-15921907 v]
+将画笔粗细设定为 (4)
+重复执行 (4) 次
+    落笔
+    移动 (40) 步
+    将y坐标增加 (-40)
+    移动 (-40) 步
+    将y坐标增加 (40)
+    抬笔
+    将y坐标增加 (-60)
+end
+
+(() - ())
+
+定义 placeObstacle
+将 [i v] 设定为 [1]
+重复执行 ([obstacles v] 的项目数) 次
+    移到 x: ((-200) + ((40) * ((第 (1) 个字符： (第 (i) 项于 [obstacles v])) - (1)))) y: ((-140) + ((40) * ((第 (2) 个字符： (第 (i) 项于 [obstacles v])) - (1))))
+    将画笔颜色设定为 [-6512990 v]
+    将画笔粗细设定为 (4)
+    落笔
+    重复执行 (9) 次
+        将y坐标增加 (40)
+        将y坐标增加 (-40)
+        将x坐标增加 (4)
+    end
+    将y坐标增加 (40)
+    将y坐标增加 (-40)
+    抬笔
+    移到 x: ((-200) + ((40) * ((第 (1) 个字符： (第 (i) 项于 [obstacles v])) - (1)))) y: ((-140) + ((40) * ((第 (2) 个字符： (第 (i) 项于 [obstacles v])) - (1))))
+    将画笔颜色设定为 [-15921907 v]
+    落笔
+    将y坐标增加 (40)
+    将x坐标增加 (40)
+    将y坐标增加 (-40)
+    将x坐标增加 (-40)
+    抬笔
+    将 [i v] 增加 (1)
+end
+
+定义 placePerso
+移到 x: ((-180) + ((40) * ((第 (1) 个字符： (pos_personnage)) - (1)))) y: ((-120) + ((40) * ((第 (2) 个字符： (pos_personnage)) - (1))))
+将画笔颜色设定为 [-1988326 v]
+将画笔粗细设定为 (25)
+落笔
+抬笔
+
+定义 traduire
+将 [i v] 设定为 [1]
+删除第 (all) 项于 [obstacles v]
+重复执行 (21) 次
+    将 [nombreBinaire v] 设定为 (第 (i) 个字符： (code_level))
+    如果 <<(第 (i) 个字符： (code_level)) = [0]> 不成立> 那么
+        如果 <(nombreBinaire) > [3]> 那么
+            将 [nombreBinaire v] 增加 (-4)
+            将 (连接 (((((i) - (1)) 除以 (3) 的余数) * (3)) + (1)) 和 ([ceiling v] ((i) / (3)))) 加到 [obstacles v]
+        end
+        如果 <(nombreBinaire) > [1]> 那么
+            将 [nombreBinaire v] 增加 (-2)
+            将 (连接 (((((i) - (1)) 除以 (3) 的余数) * (3)) + (2)) 和 ([ceiling v] ((i) / (3)))) 加到 [obstacles v]
+        end
+        如果 <(nombreBinaire) > [0]> 那么
+            将 [nombreBinaire v] 增加 (-1)
+            将 (连接 (((((i) - (1)) 除以 (3) 的余数) * (3)) + (3)) 和 ([ceiling v] ((i) / (3)))) 加到 [obstacles v]
+        end
+    end
+    将 [i v] 增加 (1)
+end
+fond
+Grille
+placeObstacle
+移到 x: ((-180) + ((40) * ((第 (22) 个字符： (code_level)) - (1)))) y: ((-120) + ((40) * ((第 (23) 个字符： (code_level)) - (1))))
+将画笔颜色设定为 [-1988326 v]
+将画笔粗细设定为 (25)
+落笔
+抬笔
+dessineFlag ((-240) + ((40) * (第 (24) 个字符： (code_level)))) ((-180) + ((40) * (第 (25) 个字符： (code_level))))
+将 [pos_personnage v] 设定为 (连接 (第 (22) 个字符： (code_level)) 和 (第 (23) 个字符： (code_level)))
+替换第 (1) 项于 [code level v] 为 (code_level)
+
+当 @ 被点击
+重复执行
+    如果 <(etat_ecran) = [2]> 那么
+        如果 <<<(鼠标的y坐标) < [175]> 与 <[155] < (鼠标的y坐标)>> 与 <<(鼠标的x坐标) < [-68]> 与 <[-182] < (鼠标的x坐标)>>> 那么
+            将画笔颜色设定为 [-10277479 v]
+            如果 <鼠标键被按下？> 那么
+                询问 [Enter a level-Code] 并等待
+                如果 <((回答) 的长度) = [25]> 那么
+                    将 [code_level v] 设定为 (回答)
+                    traduire
+                end
+            end
+        否则
+            将画笔颜色设定为 [-16777216 v]
+        end
+        如果 <<<(鼠标的y坐标) < [175]> 与 <[155] < (鼠标的y坐标)>> 与 <<(鼠标的x坐标) < [145]> 与 <[40] < (鼠标的x坐标)>>> 那么
+            如果 <鼠标键被按下？> 那么
+                隐藏列表 [code level v]
+                清空
+                traduire
+                将 [etat_ecran v] 设定为 [3]
+                广播 [TestMode v]
+            end
+        否则
+        
+        end
+        如果 <<<(鼠标的y坐标) < [-158]> 与 <[-176] < (鼠标的y坐标)>> 与 <<(鼠标的x坐标) < [-45]> 与 <[-103] < (鼠标的x坐标)>>> 那么
+            如果 <鼠标键被按下？> 那么
+                清空
+                将 [etat_ecran v] 设定为 [1]
+                广播 [Menu v]
+                隐藏列表 [code level v]
+            end
+        否则
+        
+        end
+    end
+    如果 <(etat_ecran) = [3]> 那么
+        如果 <<<(鼠标的y坐标) < [175]> 与 <[150] < (鼠标的y坐标)>> 与 <<(鼠标的x坐标) < [-10]> 与 <[-180] < (鼠标的x坐标)>>> 那么
+            如果 <鼠标键被按下？> 那么
+                清空
+                将 [etat_ecran v] 设定为 [2]
+                广播 [SandBox v]
+                显示列表 [code level v]
+                traduire
+                等待 (0.5) 秒
+            end
+        否则
+        
+        end
+    end
+end
+
+当 @ 被点击
+重复执行
+    如果 <<(etat_ecran) = [3]> 或 <(etat_ecran) = [4]>> 那么
+        如果 <<按键 [d v] 是否按下？> 或 <按键 [right arrow v] 是否按下？>> 那么
+            重复执行直到 <<[obstacles v] 包含 ((pos_personnage) + (10)) ?> 或 <<<(第 (1) 个字符： ((pos_personnage) + (10))) < [1]> 或 <[10] < (第 (1) 个字符： ((pos_personnage) + (10)))>> 或 <<(第 (2) 个字符： ((pos_personnage) + (10))) < [1]> 或 <[7] < (第 (2) 个字符： ((pos_personnage) + (10)))>>>>
+                effacePerso
+                将 [pos_personnage v] 增加 (10)
+                placePerso
+            end
+        end
+        如果 <<按键 [w v] 是否按下？> 或 <按键 [up arrow v] 是否按下？>> 那么
+            重复执行直到 <<[obstacles v] 包含 ((pos_personnage) + (1)) ?> 或 <<<(第 (1) 个字符： ((pos_personnage) + (1))) < [1]> 或 <[10] < (第 (1) 个字符： ((pos_personnage) + (1)))>> 或 <<(第 (2) 个字符： ((pos_personnage) + (1))) < [1]> 或 <[7] < (第 (2) 个字符： ((pos_personnage) + (1)))>>>>
+                effacePerso
+                将 [pos_personnage v] 增加 (1)
+                placePerso
+            end
+        end
+        如果 <<按键 [a v] 是否按下？> 或 <按键 [left arrow v] 是否按下？>> 那么
+            重复执行直到 <<[obstacles v] 包含 ((pos_personnage) + (-10)) ?> 或 <<<(第 (1) 个字符： ((pos_personnage) + (-10))) < [1]> 或 <[10] < (第 (1) 个字符： ((pos_personnage) + (-10)))>> 或 <<(第 (2) 个字符： ((pos_personnage) + (-10))) < [1]> 或 <[7] < (第 (2) 个字符： ((pos_personnage) + (-10)))>>>>
+                effacePerso
+                将 [pos_personnage v] 增加 (-10)
+                placePerso
+            end
+        end
+        如果 <<按键 [s v] 是否按下？> 或 <按键 [down arrow v] 是否按下？>> 那么
+            重复执行直到 <<[obstacles v] 包含 ((pos_personnage) + (-1)) ?> 或 <<<(第 (1) 个字符： ((pos_personnage) + (-1))) < [1]> 或 <[10] < (第 (1) 个字符： ((pos_personnage) + (-1)))>> 或 <<(第 (2) 个字符： ((pos_personnage) + (-1))) < [1]> 或 <[7] < (第 (2) 个字符： ((pos_personnage) + (-1)))>>>>
+                effacePerso
+                将 [pos_personnage v] 增加 (-1)
+                placePerso
+            end
+        end
+        如果 <(pos_personnage) = (连接 (第 (24) 个字符： (code_level)) 和 (第 (25) 个字符： (code_level)))> 那么
+            广播 [LevelFinished v]
+        end
+    end
+end
+
+定义 dessineCase_Sandbox
+移到 x: (180) y: (110)
+将画笔粗细设定为 (5)
+落笔
+重复执行 (10) 次
+    将画笔粗细设定为 (4)
+    将画笔颜色设定为 [-15228969 v]
+    移动 (40) 步
+    将x坐标增加 (-40)
+    将y坐标增加 (-4)
+end
+抬笔
+移到 x: (180) y: (50)
+落笔
+重复执行 (10) 次
+    将画笔粗细设定为 (4)
+    将画笔颜色设定为 [-6512990 v]
+    移动 (40) 步
+    将x坐标增加 (-40)
+    将y坐标增加 (-4)
+end
+抬笔
+移到 x: (180) y: (-10)
+落笔
+重复执行 (10) 次
+    将画笔粗细设定为 (4)
+    将画笔颜色设定为 [-15228969 v]
+    移动 (40) 步
+    将x坐标增加 (-40)
+    将y坐标增加 (-4)
+end
+抬笔
+移到 x: (200) y: (-30)
+将画笔粗细设定为 (25)
+将画笔颜色设定为 [12159758 v]
+落笔
+抬笔
+移到 x: (180) y: (-70)
+将画笔颜色设定为 [-15228969 v]
+将画笔粗细设定为 (4)
+落笔
+重复执行 (10) 次
+    移动 (40) 步
+    将x坐标增加 (-40)
+    将y坐标增加 (-4)
+end
+抬笔
+dessineFlag (180) (-110)
+couche_couleur_noir
+
+当接收到 [SandBox v]
+删除第 (all) 项于 [obstacles v]
+将 [pos_personnage v] 设定为 [11]
+将 [code_level v] 设定为 [0000000000000000000001197]
+抬笔
+清空
+fond
+placeObstacle
+Grille
+placePerso
+dessineCase_Sandbox
+dessineFlag (121) (102)
+广播 [CréerBouton_Sand v]
+显示列表 [code level v]
+
+定义 dessineFlag (x) (y)
+移到 x: (x) y: (y)
+移动 (18) 步
+将y坐标增加 (10)
+将画笔颜色设定为 [-10701038 v]
+将画笔粗细设定为 (5)
+落笔
+将y坐标增加 (20)
+移到 x: ((x) + (30)) y: ((y) + (20))
+移到 x: ((x) + (18)) y: ((y) + (18))
+移到 x: ((x) + (24)) y: ((y) + (24))
+抬笔
+
+当接收到 [LevelFinished v]
+如果 <(etat_ecran) = [3]> 那么
+    将 [etat_ecran v] 设定为 [2]
+    广播 [SandBox v]
+    广播 [CréerBouton_Sand v]
+    traduire
+end
+如果 <(etat_ecran) = [4]> 那么
+    如果 <(niveau) = [12]> 那么
+        将 [etat_ecran v] 设定为 [5]
+        广播 [EndScreen v]
+    否则
+        将 [niveau v] 增加 (1)
+        将 [code_level v] 设定为 (第 (niveau) 项于 [niveaux v])
+        traduire
+    end
+end
+
+当 @ 被点击
+重复执行
+    如果 <(etat_ecran) = [2]> 那么
+        如果 <<鼠标键被按下？> 与 <<(Sandbox_Case) = [1]> 或 <(Sandbox_Case) = [2]>>> 那么
+            如果 <<<(鼠标的x坐标) < [160]> 与 <[-200] < (鼠标的x坐标)>> 与 <<(鼠标的y坐标) < [140]> 与 <[-140] < (鼠标的y坐标)>>> 那么
+                将 [a v] 设定为 ([ceiling v] (((鼠标的x坐标) + (200)) / (40)))
+                将 [b v] 设定为 ([ceiling v] (((鼠标的y坐标) + (140)) / (40)))
+                如果 <<<(连接 (a) 和 (b)) = (连接 (第 (22) 个字符： (code_level)) 和 (第 (23) 个字符： (code_level)))> 或 <(连接 (a) 和 (b)) = (连接 (第 (24) 个字符： (code_level)) 和 (第 (25) 个字符： (code_level)))>> 不成立> 那么
+                    将 [nombre_code_level v] 设定为 (第 ((((b) - (1)) * (3)) + ([ceiling v] ((a) / (3)))) 个字符： (code_level))
+                    将 [binaire_nombre_code_level v] 设定为 []
+                    重复执行 (3) 次
+                        如果 <((nombre_code_level) 除以 (2) 的余数) = [0]> 那么
+                            将 [binaire_nombre_code_level v] 设定为 (连接 [0] 和 (binaire_nombre_code_level))
+                            将 [nombre_code_level v] 设定为 ((nombre_code_level) / (2))
+                        否则
+                            将 [binaire_nombre_code_level v] 设定为 (连接 [1] 和 (binaire_nombre_code_level))
+                            将 [nombre_code_level v] 设定为 (((nombre_code_level) - (1)) / (2))
+                        end
+                    end
+                    如果 <(Sandbox_Case) = [1]> 那么
+                        将 [nouveauNombre_B v] 设定为 [0]
+                    end
+                    如果 <(Sandbox_Case) = [2]> 那么
+                        将 [nouveauNombre_B v] 设定为 [1]
+                    end
+                    如果 <((a) 除以 (3) 的余数) = [0]> 那么
+                        将 [binaire_nombre_code_level v] 设定为 (连接 (第 (1) 个字符： (binaire_nombre_code_level)) 和 (连接 (第 (2) 个字符： (binaire_nombre_code_level)) 和 (nouveauNombre_B)))
+                    end
+                    如果 <((a) 除以 (3) 的余数) = [1]> 那么
+                        将 [binaire_nombre_code_level v] 设定为 (连接 (nouveauNombre_B) 和 (连接 (第 (2) 个字符： (binaire_nombre_code_level)) 和 (第 (3) 个字符： (binaire_nombre_code_level))))
+                    end
+                    如果 <((a) 除以 (3) 的余数) = [2]> 那么
+                        将 [binaire_nombre_code_level v] 设定为 (连接 (第 (1) 个字符： (binaire_nombre_code_level)) 和 (连接 (nouveauNombre_B) 和 (第 (3) 个字符： (binaire_nombre_code_level))))
+                    end
+                    将 [i v] 设定为 [1]
+                    将 [nouveau_code_level v] 设定为 []
+                    重复执行 (21) 次
+                        如果 <(i) = ((((b) - (1)) * (3)) + ([ceiling v] ((a) / (3))))> 那么
+                            将 [nouveau_code_level v] 设定为 (连接 (nouveau_code_level) 和 ((((第 (1) 个字符： (binaire_nombre_code_level)) * (4)) + ((第 (2) 个字符： (binaire_nombre_code_level)) * (2))) + (第 (3) 个字符： (binaire_nombre_code_level))))
+                        否则
+                            将 [nouveau_code_level v] 设定为 (连接 (nouveau_code_level) 和 (第 (i) 个字符： (code_level)))
+                        end
+                        将 [i v] 增加 (1)
+                    end
+                    将 [code_level v] 设定为 (连接 (nouveau_code_level) 和 (连接 (连接 (第 (22) 个字符： (code_level)) 和 (第 (23) 个字符： (code_level))) 和 (连接 (第 (24) 个字符： (code_level)) 和 (第 (25) 个字符： (code_level)))))
+                    traduire
+                end
+            end
+        end
+        如果 <<鼠标键被按下？> 与 <(Sandbox_Case) = [3]>> 那么
+            如果 <<<(鼠标的x坐标) < [160]> 与 <[-200] < (鼠标的x坐标)>> 与 <<(鼠标的y坐标) < [140]> 与 <[-140] < (鼠标的y坐标)>>> 那么
+                将 [a v] 设定为 ([ceiling v] (((鼠标的x坐标) + (200)) / (40)))
+                将 [b v] 设定为 ([ceiling v] (((鼠标的y坐标) + (140)) / (40)))
+                如果 <<(连接 (a) 和 (b)) = (连接 (第 (24) 个字符： (code_level)) 和 (第 (25) 个字符： (code_level)))> 不成立> 那么
+                    如果 <<[obstacles v] 包含 (连接 (a) 和 (b)) ?> 不成立> 那么
+                        将 [nouveau_code_level v] 设定为 []
+                        将 [i v] 设定为 [1]
+                        重复执行 (21) 次
+                            将 [nouveau_code_level v] 设定为 (连接 (nouveau_code_level) 和 (第 (i) 个字符： (code_level)))
+                            将 [i v] 增加 (1)
+                        end
+                        将 [code_level v] 设定为 (连接 (nouveau_code_level) 和 (连接 (连接 (a) 和 (b)) 和 (连接 (第 (24) 个字符： (code_level)) 和 (第 (25) 个字符： (code_level)))))
+                        traduire
+                    end
+                end
+            end
+        end
+        如果 <<鼠标键被按下？> 与 <(Sandbox_Case) = [4]>> 那么
+            如果 <<<(鼠标的x坐标) < [160]> 与 <[-200] < (鼠标的x坐标)>> 与 <<(鼠标的y坐标) < [140]> 与 <[-140] < (鼠标的y坐标)>>> 那么
+                将 [a v] 设定为 ([ceiling v] (((鼠标的x坐标) + (200)) / (40)))
+                将 [b v] 设定为 ([ceiling v] (((鼠标的y坐标) + (140)) / (40)))
+                如果 <<(连接 (a) 和 (b)) = (连接 (第 (22) 个字符： (code_level)) 和 (第 (23) 个字符： (code_level)))> 不成立> 那么
+                    如果 <<[obstacles v] 包含 (连接 (a) 和 (b)) ?> 不成立> 那么
+                        将 [nouveau_code_level v] 设定为 []
+                        将 [i v] 设定为 [1]
+                        重复执行 (23) 次
+                            将 [nouveau_code_level v] 设定为 (连接 (nouveau_code_level) 和 (第 (i) 个字符： (code_level)))
+                            将 [i v] 增加 (1)
+                        end
+                        将 [code_level v] 设定为 (连接 (nouveau_code_level) 和 (连接 (a) 和 (b)))
+                        traduire
+                    end
+                end
+            end
+        end
+    end
+end
+
+当接收到 [StartGame v]
+将 [niveau v] 设定为 [0]
+广播 [LevelFinished v]
+
+当 @ 被点击
+重复执行
+    如果 <按键 [r v] 是否按下？> 那么
+        如果 <(etat_ecran) = [4]> 那么
+            traduire
+        end
+    end
+end
+
+当 @ 被点击
+删除第 (all) 项于 [niveaux v]
+将 [0010000004000000016001186] 加到 [niveaux v]
+将 [1002002021410240404004335] 加到 [niveaux v]
+将 [1000000000004420252005197] 加到 [niveaux v]
+将 [0000300021044000202015141] 加到 [niveaux v]
+将 [0024000014042000010101186] 加到 [niveaux v]
+将 [0020201004210000042005361] 加到 [niveaux v]
+将 [0614021000122002024003747] 加到 [niveaux v]
+将 [0410040421102040404201156] 加到 [niveaux v]
+将 [0041200010011020102004353] 加到 [niveaux v]
+将 [0401140210222200121001195] 加到 [niveaux v]
+将 [0301014042422100000208233] 加到 [niveaux v]
+将 [6000040400101000020409153] 加到 [niveaux v]
+清空
+广播 [Menu v]
+
+当 @ 被点击
+重复执行
+    播放声音 [Vexento - We Are One (Original).mp3 v] 直到播放完毕
+end
+
+
+PTE
+===
+
+Variables
+---------
+
+- n° car. = 8
+- n° dans liste = 24
+- Lire liste Descr. = 11
+- largeur caract. = 5
+
+Lists
+-----
+
+- Caractères:
+    - a
+    - b
+    - c
+    - d
+    - e
+    - f
+    - g
+    - h
+    - i
+    - j
+    - k
+    - l
+    - m
+    - n
+    - o
+    - p
+    - q
+    - r
+    - s
+    - t
+    - u
+    - v
+    - w
+    - x
+    - y
+    - z
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - ?
+    - !
+    - .
+    - ,
+    - :
+    - ;
+    - /
+    - \
+    - |
+    - (
+    - )
+    - -
+    - _
+    - =
+    - ^
+    - *
+    - +
+    - $
+    - €
+    - `
+    - "
+    - '
+    - #
+    - °
+    - ²
+    - ³
+    - [
+    - ]
+    - %
+- Descr. caractères:
+    - 451749up3638
+    - 15454743383230up1517232832
+    - 2317162040464743
+    - 15172343474515
+    - 18154548up3032
+    - 181545up3032
+    - 23171620404647433837
+    - 1545up3033up1848
+    - 1517up1646up4547
+    - 1618up1742464035
+    - 1545up183048
+    - 154548
+    - 4515321949
+    - 45154919
+    - 161824444846402016
+    - 45151723283230
+    - 161824444846402016up3749
+    - 45151824293230up3149
+    - 4046474338322520161723
+    - 1519up1747
+    - 154046484419
+    - 154719
+    - 1546274819
+    - 1549up1945
+    - 152719up2747
+    - 15184548
+    - 161723434746402016
+    - 251747up4648
+    - 2520161723284548
+    - 20161723283231323843474640
+    - 174043up3747
+    - 181530323843474640
+    - 231716204046474338323135
+    - 151845up3033
+    - 1617232832313540464743383231252016
+    - 404647432317162025313228
+    - 2015111218233732up4747
+    - 1237up4747
+    - 4545
+    - 4650
+    - 3132272631up4142474641
+    - 3131up4145
+    - 4514
+    - 1048
+    - 1045
+    - 46401511
+    - 45411610
+    - 3033
+    - 4548
+    - 3537up2527
+    - 151117
+    - 1527up2517
+    - 3032up2636
+    - 24191631344441up1328up4848
+    - 191721414749up2528up3538
+    - 1511
+    - 15111713
+    - 1511
+    - 3539up4121up2529up2343
+    - 1020221210
+    - 101222203032
+    - 10122220up223230
+    - 11104546
+    - 10114645
+    - 1020221210up4519up3739494737
+
+造型
+--
+
+- costume2
+
+声音
+--
+
+- meow
+
+脚本
+--
+
+定义 Write (text) Size (Size) Thickness (Thickness) color (color) at x | y (x) (y) Normal/Italic (N/I)
+移到 x: (x) y: (y)
+将画笔颜色设定为 (color)
+将画笔粗细设定为 (Thickness)
+将 [n° car. v] 设定为 [1]
+重复执行 ((text) 的长度) 次
+    如果 <[Caractères v] 包含 (第 (n° car.) 个字符： (text)) ?> 那么
+        将 [n° dans liste v] 设定为 [0]
+        重复执行直到 <(第 (n° dans liste) 项于 [Caractères v]) = (第 (n° car.) 个字符： (text))>
+            将 [n° dans liste v] 增加 (1)
+        end
+    否则
+        将 [n° dans liste v] 设定为 [0]
+    end
+    如果 <<(n° dans liste) = [0]> 不成立> 那么
+        Aller à la ligne ? ((Size) / (10)) (x) (y 坐标)
+    end
+    Letter (n° dans liste) ((Size) / (10)) (N/I) (x 坐标) (y 坐标)
+    将 [n° car. v] 增加 (1)
+end
+抬笔
+
+定义 Letter (n°) (size) (N/I) (xd) (yd)
+将 [Lire liste Descr. v] 设定为 [1]
+将 [largeur caract. v] 设定为 [0]
+如果 <<(n°) = [0]> 不成立> 那么
+    重复执行直到 <<(Lire liste Descr.) = ((第 (n°) 项于 [Descr. caractères v]) 的长度)> 或 <(Lire liste Descr.) > ((第 (n°) 项于 [Descr. caractères v]) 的长度)>>
+        如果 <(连接 (第 (Lire liste Descr.) 个字符： (第 (n°) 项于 [Descr. caractères v])) 和 (第 ((Lire liste Descr.) + (1)) 个字符： (第 (n°) 项于 [Descr. caractères v]))) = [up]> 那么
+            抬笔
+            将 [Lire liste Descr. v] 增加 (2)
+        end
+        Go to (连接 (第 (Lire liste Descr.) 个字符： (第 (n°) 项于 [Descr. caractères v])) 和 (第 ((Lire liste Descr.) + (1)) 个字符： (第 (n°) 项于 [Descr. caractères v]))) (N/I) down left pos. : (xd) (yd) Size (size)
+        如果 <(largeur caract.) < (((连接 (第 (Lire liste Descr.) 个字符： (第 (n°) 项于 [Descr. caractères v])) 和 (第 ((Lire liste Descr.) + (1)) 个字符： (第 (n°) 项于 [Descr. caractères v]))) 除以 (5) 的余数) + (1))> 那么
+            将 [largeur caract. v] 设定为 (((连接 (第 (Lire liste Descr.) 个字符： (第 (n°) 项于 [Descr. caractères v])) 和 (第 ((Lire liste Descr.) + (1)) 个字符： (第 (n°) 项于 [Descr. caractères v]))) 除以 (5) 的余数) + (1))
+        end
+        落笔
+        将 [Lire liste Descr. v] 增加 (2)
+    end
+否则
+    将 [largeur caract. v] 设定为 [4]
+end
+抬笔
+Go to (45) (N/I) down left pos. : (xd) (yd) Size (size)
+将x坐标增加 (((largeur caract.) * (size)) * (1.2))
+
+定义 Go to (n°) (N/I) down left pos. : (xd) (yd) Size (size)
+如果 <(N/I) = [i]> 那么
+    移到 x: ((xd) + ((((n°) 除以 (5) 的余数) * (size)) + ((([ceiling v] (((n°) - (49)) / (5))) * (size)) * (-0.7)))) y: ((yd) + ((([ceiling v] (((n°) - (49)) / (5))) * (size)) * (-1)))
+否则
+    移到 x: ((xd) + (((n°) 除以 (5) 的余数) * (size))) y: ((yd) + ((([ceiling v] (((n°) - (49)) / (5))) * (size)) * (-1)))
+end
+
+// [of the pen]
+
+// [N for normal or I for Italic]
+
+// [x and y start pos.]
+
+// [The RGB ]
+// [code of the color]
+// [exemple: 16777215 for withe]
+
+(((10) * (size)) * (1.2))
+
+(largeur caract.)
+
+定义 Aller à la ligne ? (Size) (x) (y)
+如果 <((x 坐标) + ((5) * (Size))) > [238]> 那么
+    移到 x: (x) y: ((y) + ((-10) * (Size)))
+end
+
+定义 // (text)
+
+广播 [SandBox v]
+
+当接收到 [CréerBouton_Sand v]
+Write [Enter Code] Size (20) Thickness (3) color (0) at x | y (-180) (158) Normal/Italic [i]
+Write [Try level] Size (20) Thickness (3) color (0) at x | y (40) (158) Normal/Italic [i]
+Write [Menu] Size (20) Thickness (3) color (0) at x | y (-100) (-170) Normal/Italic [i]
+
+当接收到 [TestMode v]
+Write [Back To Sandbox] Size (20) Thickness (3) color (1) at x | y (-180) (158) Normal/Italic [i]
+
+当接收到 [EndScreen v]
+将画笔粗细设定为 (255)
+将画笔颜色设定为 [-15228969 v]
+落笔
+移到 x: (-200) y: (60)
+移动 (400) 步
+将y坐标增加 (-120)
+移动 (-400) 步
+抬笔
+Write [You Won!] Size (100) Thickness (5) color (256) at x | y (-230) (30) Normal/Italic []
+Write [Back to Menu] Size (20) Thickness (3) color (1) at x | y (-70) (-50) Normal/Italic []
+将画笔粗细设定为 (5)
+将画笔颜色设定为 [-16777216 v]
+移到 x: (-76) y: (-30)
+落笔
+移动 (140) 步
+将y坐标增加 (-30)
+移动 (-140) 步
+将y坐标增加 (30)
+抬笔
+
+当 @ 被点击
+重复执行
+    如果 <(etat_ecran) = [5]> 那么
+        如果 <<<[-79] < (鼠标的x坐标)> 与 <(鼠标的x坐标) < [65]>> 与 <<[-63] < (鼠标的y坐标)> 与 <(鼠标的y坐标) < [-25]>>> 那么
+            将画笔粗细设定为 (5)
+            将画笔颜色设定为 [-10277479 v]
+            移到 x: (-76) y: (-30)
+            落笔
+            移动 (140) 步
+            将y坐标增加 (-30)
+            移动 (-140) 步
+            将y坐标增加 (30)
+            抬笔
+            如果 <鼠标键被按下？> 那么
+                在 <<鼠标键被按下？> 不成立> 之前一直等待
+                清空
+                广播 [Menu v]
+                将 [etat_ecran v] 设定为 [1]
+            end
+        否则
+            将画笔粗细设定为 (5)
+            将画笔颜色设定为 [-16777216 v]
+            移到 x: (-76) y: (-30)
+            落笔
+            移动 (140) 步
+            将y坐标增加 (-30)
+            移动 (-140) 步
+            将y坐标增加 (30)
+            抬笔
+        end
+    end
+end
+
+广播 [EndScreen v]
+将 [etat_ecran v] 设定为 [5]
+
+当接收到 [Menu v]
+将 [etat_ecran v] 设定为 [1]
+Write [Play] Size (50) Thickness (7) color (0) at x | y (-70) (70) Normal/Italic [i]
+Write [Sandbox] Size (50) Thickness (7) color (0) at x | y (-115) (-40) Normal/Italic [i]
+重复执行
+    如果 <(etat_ecran) = [1]> 那么
+        如果 <<<[-85] < (鼠标的x坐标)> 与 <(鼠标的x坐标) < [65]>> 与 <<(鼠标的y坐标) < [115]> 与 <[55] < (鼠标的y坐标)>>> 那么
+            将画笔颜色设定为 [10554828 v]
+            如果 <鼠标键被按下？> 那么
+                将 [etat_ecran v] 设定为 [4]
+                广播 [StartGame v]
+            end
+        否则
+            将画笔颜色设定为 [-16777216 v]
+        end
+        抬笔
+        移到 x: (-85) y: (115)
+        落笔
+        移动 (150) 步
+        将y坐标增加 (-60)
+        移动 (-150) 步
+        将y坐标增加 (60)
+        抬笔
+        如果 <<<[-122] < (鼠标的x坐标)> 与 <(鼠标的x坐标) < [98]>> 与 <<(鼠标的y坐标) < [0]> 与 <[-60] < (鼠标的y坐标)>>> 那么
+            将画笔颜色设定为 [10554828 v]
+            如果 <鼠标键被按下？> 那么
+                将 [etat_ecran v] 设定为 [2]
+                广播 [SandBox v]
+            end
+        否则
+            将画笔颜色设定为 [-16777216 v]
+        end
+        抬笔
+        移到 x: (-122) y: (0)
+        落笔
+        移动 (220) 步
+        将y坐标增加 (-60)
+        移动 (-220) 步
+        将y坐标增加 (60)
+        抬笔
+    end
+end
